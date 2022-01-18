@@ -25,13 +25,13 @@ describe 'teams index' do
 
   describe 'display' do
     it 'names of all teams ordered by average age desc' do
-      expect(@team3.name).to appear_before(@team1.name)
-      expect(@team1.name).to appear_before(@team2.name)
+      expect(@team3.nickname).to appear_before(@team1.nickname)
+      expect(@team1.nickname).to appear_before(@team2.nickname)
     end
 
     it 'next to each team, average age of players' do
       within "#team-#{@team1.id}"
         expect(page).to have_content('Players average age: 13')
-      end 
+      end
     end
   end
