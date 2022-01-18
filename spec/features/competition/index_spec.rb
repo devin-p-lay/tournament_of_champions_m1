@@ -12,5 +12,5 @@ describe 'competitions index' do
       expect(page).to have_content(@comp1.name)
       expect(page).to have_content(@comp2.name)
     end
-  end 
-
+  end
+end
