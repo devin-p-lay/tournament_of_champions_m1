@@ -1,5 +1,7 @@
 <h1>Competitions</h1>
 
 <% @competitions.each do |competition| %>
-  <p><%= competition.name %></p>
+  <div id="competition-<%= competition.id %>">
+    <p><%= link_to competition.name, competition_path(competition)%></p>
+  </div>
 <% end %>

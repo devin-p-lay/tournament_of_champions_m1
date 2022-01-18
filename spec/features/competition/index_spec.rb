@@ -8,9 +8,19 @@ describe 'competitions index' do
   end
 
   describe 'display' do
-    it 'names of all competitions' do
-      expect(page).to have_content(@comp1.name)
-      expect(page).to have_content(@comp2.name)
+    describe 'names of all competitions' do
+      it 'each name links to its show page' do
+        within("#competition-#{@comp1.id}") do
+          click_link @comp1.name
+          expect(current_path).to eq(competition_path(@comp1))
+        end
+
+        visit competitions_path
+        within("#competition-#{@comp2.id}") do
+          click_link @comp2.name
+          expect(current_path).to eq(competition_path(@comp2))
+        end
+      end
     end
   end
 end
