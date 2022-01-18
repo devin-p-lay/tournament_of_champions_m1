@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :competitions, only: [:index, :show] do
-    resources :teams, only: :new
-  end 
+  resources :competitions, only: [:show, :index] do
+    resources :teams, only: [:new, :create]
+  end
 end

@@ -9,11 +9,12 @@ describe 'new competition team' do
 
   describe 'form to register team' do
     it 'it creates a new competition team' do
-      fill_in 'Team Name', with: 'Cyclones'
+      fill_in 'Hometown', with: 'Denver'
+      fill_in 'Team Name', with: 'Dodgers'
       click_on 'Register Team'
       expect(current_path).to eq(competition_path(@comp1))
-      expect(page).to have_content(@team3.hometown)
-      expect(page).to have_content(@team3.nickname)
+      expect(page).to have_content('Denver')
+      expect(page).to have_content('Dodgers')
     end
   end
-end 
+end
