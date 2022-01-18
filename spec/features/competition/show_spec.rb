@@ -45,5 +45,10 @@ describe 'competition show' do
     it 'average age of all players in the competition' do
       expect(page).to have_content("Average age of all players: #{@comp1.average_age}")
     end
+
+    it 'link to register a new team' do
+      click_link 'Register New Team'
+      expect(current_path).to eq(new_competition_team_path(@comp1))
+    end
   end
 end

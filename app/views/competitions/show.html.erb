@@ -3,6 +3,7 @@
 <h3>Average age of all players: <%= @competition.average_age %></h3>
 <h3>Location: <%= @competition.location %></h3>
 <h3>Sport: <%= @competition.sport %></h3>
+<%= link_to 'Register New Team', new_competition_team_path(@competition) %>
 <h1>Teams:</h1>
   <% @competition.competition_teams.each do |comp_team| %></p>
     <p><%= comp_team.team.hometown %> <%= comp_team.team.nickname %></p>
